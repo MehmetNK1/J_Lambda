@@ -41,7 +41,9 @@ public class Lambda02 {
         sayi.
                 stream().
                 filter(Lambda01::ciftBul).
-                map(t -> t * t).//map()--> Stream içerisindeki elemanları başka tiplere dönüştürmek veya üzerlerinde işlem yapmak (update) için Map kullanılmaktadır.
+                map(t -> t * t).
+                //map()--> Stream içerisindeki elemanları başka tiplere dönüştürmek
+                // veya üzerlerinde işlem yapmak (update) için Map kullanılmaktadır.
                 forEach(Lambda01::yazdir);
 
 

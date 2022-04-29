@@ -97,10 +97,14 @@ public class Lambda01 {
     public static void yazdir(int a) {// verilen int degeri aynı satırda bosluk bırakarak yazdırma action yapan seed(tohum) method create edildi
         System.out.print(a + " ");
     }
+    // yazdirma islemi yaparken aralarina bosluklu yazdirma methodunu biz ekleriz cunku bu islem Lambda da yoktur
+    // method oldugu icin herzaman ve her yerden kullanabiliriz
 
     public static void printElFunctional2(List<Integer> sayi) {
         sayi.stream().forEach(Lambda01::yazdir);//method reference--> System.out yapısında prin methodu refere et
-    }
+    }//        kaynak(nereden alindigi)::hangi methodun kullanildigi
+    //                          class :: method
+    //      bu islemi herde ve herzaman yapabiliriz
 
     // Task : structured Programming ile list elemanlarinin  cift olanalrini ayni satirda aralarina bosluk birakarak print ediniz.
     public static void printCiftElSturctured(List<Integer> sayi) {
@@ -140,7 +144,7 @@ public class Lambda01 {
         sayi.
                 stream().
                 // filter(t -> t % 2 == 0 && t < 34).
-                        filter(Lambda01::ciftBul).//method ref.
+                filter(Lambda01::ciftBul).//method ref.
                 filter(t -> t < 34).//lambda exp.
                 forEach(Lambda01::yazdir);
     }
@@ -151,9 +155,10 @@ public class Lambda01 {
     public static void printCiftOtzBykFunctional(List<Integer> sayi) {
         sayi.
                 stream().
-                filter(t -> t % 2 == 0 || t > 34).//çift veya 34'den buyuk elemanları filtreler 44 63 65 38
                 // filter(Lambda01::ciftBul).//method ref.
                 // filter(t -> t > 34).//lambda exp.
-                        forEach(Lambda01::yazdir);
+                //yukardaki iki methodun birlestirme islemi yapildi
+                filter(t -> t % 2 == 0 || t > 34).//çift veya 34'den buyuk elemanları filtreler 44 63 65 38
+                forEach(Lambda01::yazdir);
     }
 }
