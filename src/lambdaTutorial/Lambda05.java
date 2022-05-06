@@ -118,7 +118,10 @@ public class Lambda05 {
         return IntStream.
                 iterate(istenenSayi, t -> t * istenenSayi).
                 limit(x).reduce(0, (t, u) -> u);
-         // return Math.pow(istenenSayi,x);
+        //skip(x-1);//skip den sonra cıkan elemanları toList ile yazdirilmali
+        // return Math.pow(istenenSayi,x);
+        //return IntStream.iterate(istenenSayi,t->t*istenenSayi).limit(x).skip(x-1).findFirst().orElseThrow();
     }
+
 
 }
